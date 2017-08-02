@@ -1,0 +1,23 @@
+{{extend 'layout.html'}}
+<h2>
+    Campus Store
+</h2>
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td></td>
+        <td>Price</td>
+        <td>How Old</td>
+        <td>Owner</td>
+        <td>Status</td>
+    </tr>
+    <tr>
+        {{for row in rows:}}
+        <td>{{=row.Name}}</td>
+        <td><img width=200px src="{{=URL('download', args=row.Image)}}"></td>
+        <td>{{=row.Selling_Price}}</td>
+        <td>{{=row.How_Old}}</td>
+        <td>{{=row.created_by.first_name}} {{=row.created_by.last_name}}</td>
+        <td></td>
+    </tr>
+</table>
